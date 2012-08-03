@@ -165,7 +165,8 @@ public class ShellConfig
                "   echo \"   |_|  \\\\___/|_|  \\\\__, |\\\\___| \";" + "\n" +
                "   echo \"                   |___/      \";" + "\n" +
                "   echo \" \";" + "\n" +
-
+               "   echo \" JBoss Forge, version [ " + environment.getRuntimeVersion() +
+               " ] - JBoss, by Red Hat, Inc. [ http://jboss.org/forge ] \"\n" +
                "}\n" +
                "\n" +
                "if ($OS_NAME.startsWith(\"Windows\")) {\n" +
