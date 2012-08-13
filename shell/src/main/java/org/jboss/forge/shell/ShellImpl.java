@@ -1,25 +1,9 @@
 /*
- * JBoss, by Red Hat.
- * Copyright 2010, Red Hat, Inc., and individual contributors
- * by the @authors tag. See the copyright.txt in the distribution for a
- * full listing of individual contributors.
+ * Copyright 2012 Red Hat, Inc. and/or its affiliates.
  *
- * This is free software; you can redistribute it and/or modify it
- * under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation; either version 2.1 of
- * the License, or (at your option) any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this software; if not, write to the Free
- * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
- * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ * Licensed under the Eclipse Public License version 1.0, available at
+ * http://www.eclipse.org/legal/epl-v10.html
  */
-
 package org.jboss.forge.shell;
 
 import static org.mvel2.DataConversion.addConversionHandler;
@@ -375,8 +359,8 @@ public class ShellImpl extends AbstractShellPrompt implements Shell
          this.registerKeyListener(ignoreEOF);
 
       /*
-       * Do this last so that we don't fire off plugin events before the shell has booted
-       * (Causing all kinds of wonderful issues)
+       * Do this last so that we don't fire off plugin events before the shell has booted (Causing all kinds of
+       * wonderful issues)
        */
       projectContext.setCurrentResource(resourceFactory.getResourceFrom(event.getWorkingDirectory()));
       environment.setProperty("CWD", getCurrentDirectory().getFullyQualifiedName());
@@ -412,7 +396,8 @@ public class ShellImpl extends AbstractShellPrompt implements Shell
             historyOutstream.flush();
          }
          catch (IOException e)
-         {}
+         {
+         }
       }
    }
 
@@ -457,7 +442,8 @@ public class ShellImpl extends AbstractShellPrompt implements Shell
                historyOutstream.close();
             }
             catch (Exception e)
-            {}
+            {
+            }
          }
       });
    }
@@ -520,7 +506,8 @@ public class ShellImpl extends AbstractShellPrompt implements Shell
    private void initReaderAndStreams() throws IOException
    {
       boolean noInitMode = isNoInitMode();
-      if ((_redirectedStream == null) && noInitMode) {
+      if ((_redirectedStream == null) && noInitMode)
+      {
          return;
       }
 

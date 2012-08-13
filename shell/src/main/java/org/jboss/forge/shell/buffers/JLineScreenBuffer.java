@@ -1,3 +1,9 @@
+/*
+ * Copyright 2012 Red Hat, Inc. and/or its affiliates.
+ *
+ * Licensed under the Eclipse Public License version 1.0, available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package org.jboss.forge.shell.buffers;
 
 import org.jboss.forge.shell.integration.BufferManager;
@@ -9,7 +15,7 @@ import java.nio.ByteBuffer;
 
 /**
  * A buffer to wrap JLine.
- *
+ * 
  * @author Mike Brock
  */
 public class JLineScreenBuffer implements BufferManager
@@ -144,7 +150,7 @@ public class JLineScreenBuffer implements BufferManager
 
    /**
     * For data that exceeds the maximum size of the buffer, write out the data in segments.
-    *
+    * 
     * @param b
     * @param offset
     * @param length

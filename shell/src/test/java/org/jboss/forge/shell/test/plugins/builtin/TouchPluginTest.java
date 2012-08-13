@@ -1,3 +1,10 @@
+/*
+ * Copyright 2012 Red Hat, Inc. and/or its affiliates.
+ *
+ * Licensed under the Eclipse Public License version 1.0, available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
+
 package org.jboss.forge.shell.test.plugins.builtin;
 
 import static org.junit.Assert.assertTrue;
@@ -16,31 +23,30 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Arquillian.class)
 public class TouchPluginTest extends AbstractShellTest
-{ 
-	
-	@Test
-	public void testAnExistingFile() throws Exception
-	{
-		Shell shell = getShell();
-		File pom = new File(shell.getCurrentResource().getFullyQualifiedName(), "pom.xml");
-		long oldLastModified = pom.lastModified();
-		
-		shell.execute("touch pom.xml");
-		
-		long newLastModified = pom.lastModified();
-		assertTrue("should have changed the file timestamp",newLastModified > oldLastModified);
-	}
-	
-	
-	@Test
-	public void testANonExistingFile() throws Exception
-	{
-		Shell shell = getShell();
-		shell.execute("touch newFile.txt");
-		Resource<?> newFile = shell.getCurrentDirectory().getChild("newFile.txt");
-		  
-		assertTrue("file should exist",newFile.exists());
-		  
-		newFile.delete();
-	}
+{
+
+   @Test
+   public void testAnExistingFile() throws Exception
+   {
+      Shell shell = getShell();
+      File pom = new File(shell.getCurrentResource().getFullyQualifiedName(), "pom.xml");
+      long oldLastModified = pom.lastModified();
+
+      shell.execute("touch pom.xml");
+
+      long newLastModified = pom.lastModified();
+      assertTrue("should have changed the file timestamp", newLastModified > oldLastModified);
+   }
+
+   @Test
+   public void testANonExistingFile() throws Exception
+   {
+      Shell shell = getShell();
+      shell.execute("touch newFile.txt");
+      Resource<?> newFile = shell.getCurrentDirectory().getChild("newFile.txt");
+
+      assertTrue("file should exist", newFile.exists());
+
+      newFile.delete();
+   }
 }
